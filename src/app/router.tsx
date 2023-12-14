@@ -1,5 +1,6 @@
 import Layout from '@component/Layout';
 import Login from '@pages/auth/login/Login';
+import Dashboard from '@pages/dashboard/Dashboard';
 import { Outlet, createBrowserRouter } from 'react-router-dom';
 
 const Root = () => {
@@ -27,7 +28,7 @@ export default createBrowserRouter([
     children: [
       {
         path: 'dashboard',
-        element: <Root />,
+        element: <Dashboard />,
       },
       {
         path: 'data',

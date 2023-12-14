@@ -10,22 +10,20 @@ export default function Layout() {
       <div className="relative p-2 bg-white/50 rounded-l-xl backdrop-blur-[2px] border-l border-y border-white/50 z-20">
         <Sidebar isActive={sidebarOpen} />
         <div className="absolute top-5 -right-5">
-          <Button placeholder={''} className="bg-custom_light p-2">
+          <Button placeholder={''} className="bg-custom_light p-2" onClick={() => setSidebarOpen(!sidebarOpen)}>
             {sidebarOpen ? (
               <PanelLeftClose
                 className="text-custom_gray"
-                onClick={() => setSidebarOpen(false)}
               />
             ) : (
               <PanelLeftOpen
                 className="text-custom_gray"
-                onClick={() => setSidebarOpen(true)}
               />
             )}
           </Button>
         </div>
       </div>
-      <div className=" bg-white/20 rounded-r-xl backdrop-blur-[2px] border-r border-y border-white/50 w-full">
+      <div className=" bg-white/20 rounded-r-xl backdrop-blur-[2px] border-r border-y border-white/50 w-full px-8 pt-16">
         <Outlet />
       </div>
     </div>

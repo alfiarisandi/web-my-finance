@@ -20,6 +20,7 @@ module.exports = withMT({
         custom_dark_blue: '#161A30',
         custom_light_blue: '#7ED7C1',
         custom_blue: '#4CB9E7',
+        custom_blue_2 : '#1F4172',
         custom_light_gray: '#B6C4B6',
         custom_gray: '#607274',
         custom_black: '#191919',
@@ -28,7 +29,7 @@ module.exports = withMT({
       },
     },
     fontFamily: {
-      sans: ['DM Sans', 'sans-serif'],
+      sans: ['Inter', 'sans-serif'],
       serif: ['Inter', 'sans-serif'],
       body: ['Sora', 'sans-serif'],
     },
