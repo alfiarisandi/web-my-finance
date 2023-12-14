@@ -9,4 +9,7 @@ export interface IUser {
   starting_date: number;
 }
 
-export interface IUserLogin {}
+export interface IUserLogin {
+  username: string;
+  password: string;
+}

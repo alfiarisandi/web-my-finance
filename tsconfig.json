@@ -16,6 +16,7 @@
 
     /* Linting */
     "strict": true,
+    "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
@@ -30,6 +31,7 @@
       "@interfaces*": ["shared/interfaces*"],
       "@redux*": ["shared/redux*"],
       "@utils*": ["shared/utils*"],
+      "@constants*": ["shared/constants*"],
     }
   },
   "include": ["src"],

@@ -1,71 +1,63 @@
-import { Button, Card, Input, Typography } from '@material-tailwind/react';
 import useLogin from '../hooks/useLogin';
+
+import { Button, Typography } from '@material-tailwind/react';
+import { Link } from 'react-router-dom';
 
 const index = () => {
   const useLoginAuth = useLogin();
   return (
-    <div className="m-auto">
-      <div className="rounded-md border border-gray-200 p-5">
-        <Card color="transparent" shadow={false}>
-          <Typography variant="h4" color="blue-gray">
-            Sign Up
+    <div className="h-screen flex md:justify-between justify-center">
+      <div className="md:w-[60%] bg-custom_light_blue"></div>
+      <div className="flex flex-col w-full md:w-[40%] justify-center items-center">
+        <form
+          onSubmit={useLoginAuth.handleSubmit(useLoginAuth.onSubmintLogin)}
+          className="px-5 md:px-12 w-full flex flex-col gap-3"
+        >
+          <Typography
+            placeholder={''}
+            variant="h4"
+            className="self-start mb-10"
+          >
+            Hello, Welcome
           </Typography>
-          <Typography color="gray" className="mt-1 font-normal">
-            Nice to meet you! Enter your details to register.
-          </Typography>
-          <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
-            <div className="mb-1 flex flex-col gap-6">
-              <Typography variant="h6" color="blue-gray" className="-mb-3">
-                Your Name
-              </Typography>
-              <Input
-                size="lg"
-                placeholder="name@mail.com"
-                className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                labelProps={{
-                  className: 'before:content-none after:content-none',
-                }}
-              />
-              <Typography variant="h6" color="blue-gray" className="-mb-3">
-                Your Email
-              </Typography>
-              <Input
-                size="lg"
-                placeholder="name@mail.com"
-                className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                labelProps={{
-                  className: 'before:content-none after:content-none',
-                }}
-              />
-              <Typography variant="h6" color="blue-gray" className="-mb-3">
-                Password
-              </Typography>
-              <Input
-                type="password"
-                size="lg"
-                placeholder="********"
-                className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                labelProps={{
-                  className: 'before:content-none after:content-none',
-                }}
-              />
-            </div>
-
-            <Button
-              onClick={useLoginAuth.handleClick}
-              className="mt-6"
-              fullWidth
-            >
-              sign up
-            </Button>
-            <Typography color="gray" className="mt-4 text-center font-normal">
-              Already have an account?{' '}
-              <a href="#" className="font-medium text-gray-900">
-                Sign In
-              </a>
-            </Typography>
-          </form>
-        </Card>
+          <div className="flex flex-col gap-2">
+            <label className="font-semibold text-custom_dark_blue">Email</label>
+            <input
+              type="text"
+              className="border border-custom_light_gray rounded-md py-2 px-4 bg-custom_light_gray/10 outline-none text-sm"
+              placeholder="your_username"
+              {...useLoginAuth.register('username')}
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label className="font-semibold text-custom_dark_blue">
+              Password
+            </label>
+            <input
+              type="password"
+              className="border border-custom_light_gray rounded-md py-2 px-4 bg-custom_light_gray/10 outline-none text-sm"
+              placeholder="your_password"
+              {...useLoginAuth.register('password')}
+            />
+          </div>
+          <Link to={''} className="text-custom_light_gray self-end">
+            Reset Password ?
+          </Link>
+          <Button
+            type="submit"
+            placeholder={''}
+            className="mt-5 bg-custom_dark_green"
+          >
+            Sign in
+          </Button>
+          <div className="flex justify-evenly items-center mt-3">
+            <div className="bg-custom_light_gray h-[2px] rounded-sm w-[150px]"></div>
+            <Link to={''} className="px-4 whitespace-nowrap text-custom_gray">
+              Sign Up
+            </Link>
+            <div className="bg-custom_light_gray h-[2px] rounded-sm w-[150px]"></div>
+          </div>
+        </form>
       </div>
     </div>
   );

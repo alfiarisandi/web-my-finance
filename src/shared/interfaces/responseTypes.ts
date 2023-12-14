@@ -1,6 +1,6 @@
-export interface IResponseDataDetail {
-  data: object;
+export interface IResponseData<T> {
+  data?: T;
   message: string;
   status: string;
-  token: string;
+  token?: string;
 }

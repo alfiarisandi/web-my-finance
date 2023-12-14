@@ -1,9 +1,8 @@
 import { apiBaseUrl } from '@api/apiBaseurlSlice';
-import { IResponseDataDetail } from '@interfaces/responseTypes';
 
 export const authApiService = apiBaseUrl.injectEndpoints({
   endpoints: (builder) => ({
-    authLogin: builder.mutation<IResponseDataDetail, object>({
+    authLogin: builder.mutation({
       query: (formBody) => ({
         url: `auth/login`,
         method: 'POST',

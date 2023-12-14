@@ -43,6 +43,10 @@ export default defineConfig({
         find: '@utils',
         replacement: path.resolve(__dirname, 'src/shared/utils'),
       },
+      {
+        find: '@constants',
+        replacement: path.resolve(__dirname, 'src/shared/constants'),
+      },
     ],
   },
 });
