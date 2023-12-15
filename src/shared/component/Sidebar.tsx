@@ -24,9 +24,10 @@ const ButonSidebar = ({ url, icon, label }: IMenuTypes) => {
     <Link to={url} className="outline-none bg-transparent ">
       <ListItem
         placeholder={''}
-        className={`focus:bg-transparent active:bg-transparent px-3 py-2 hover:bg-gradient-to-r from-custom_blue to-custom_pink_2 rounded-lg group/item hover:text-custom_light group/item ${selected &&
+        className={`focus:bg-transparent active:bg-transparent px-3 py-2 hover:bg-gradient-to-r from-custom_blue to-custom_pink_2 rounded-lg group/item hover:text-custom_light group/item ${
+          selected &&
           'bg-gradient-to-r from-custom_blue to-custom_pink_2 text-custom_light'
-          }`}
+        }`}
       >
         <ListItemPrefix
           placeholder={''}
@@ -36,8 +37,9 @@ const ButonSidebar = ({ url, icon, label }: IMenuTypes) => {
         </ListItemPrefix>
         <Typography
           placeholder={''}
-          className={`font-normal group-hover/item:text-custom_light ${selected && 'text-custom_light'
-            }`}
+          className={`font-normal group-hover/item:text-custom_light ${
+            selected && 'text-custom_light'
+          }`}
         >
           {label}
         </Typography>
@@ -64,8 +66,9 @@ const AccordianMenu = ({
       icon={
         <ChevronDownIcon
           strokeWidth={2.5}
-          className={`mx-auto h-4 w-4 transition-all ease-in-out group-hover/item:text-custom_light ${open === 1 ? 'rotate-180' : ''
-            }`}
+          className={`mx-auto h-4 w-4 transition-all ease-in-out group-hover/item:text-custom_light ${
+            open === 1 ? 'rotate-180' : ''
+          }`}
         />
       }
     >
@@ -151,7 +154,7 @@ const IconButtonSide = ({
   icon,
   url,
   label,
-  onClick = () => { },
+  onClick = () => {},
 }: {
   icon: any;
   url: string;
@@ -165,9 +168,10 @@ const IconButtonSide = ({
       <Button
         placeholder={''}
         onClick={onClick}
-        className={`focus:bg-transparent active:bg-transparent bg-transparent shadow-none hover:shadow-none p-3 hover:bg-gradient-to-r from-custom_blue to-custom_pink_2 rounded-lg group/item hover:text-custom_light  ${selected &&
+        className={`focus:bg-transparent active:bg-transparent bg-transparent shadow-none hover:shadow-none p-3 hover:bg-gradient-to-r from-custom_blue to-custom_pink_2 rounded-lg group/item hover:text-custom_light  ${
+          selected &&
           'bg-gradient-to-r from-custom_blue to-custom_pink_2 text-custom_light'
-          }`}
+        }`}
       >
         {icon}
       </Button>
@@ -223,18 +227,21 @@ export default function Sidebar({ isActive = true }: { isActive: boolean }) {
     setOpen(open === value ? 0 : value);
   };
   return (
-    <div
-      className={`flex flex-col h-full w-fit justify-between items-center`}
-    >
-      <div className={`mb-2 p-4 flex flex-col gap-6 transition-all ease-in-out delay-75 duration-300 overflow-x-hidden ${isActive ? 'w-[18rem] p-4' : 'w-[3em] px-0 justify-center items-center'
-        }`}>
-
+    <div className={`flex flex-col h-full w-fit justify-between items-center`}>
+      <div
+        className={`mb-2 p-4 flex flex-col gap-6 transition-all ease-in-out delay-75 duration-500 overflow-x-hidden ${
+          isActive
+            ? 'w-[18rem] p-4'
+            : 'w-[3em] px-0 justify-center items-center'
+        }`}
+      >
         <Typography
           placeholder={''}
           variant="h4"
           color="white"
-          className={`${!isActive && '-translate-x-80 '
-            } transition-all ease-in-out delay-75 duration-500`}
+          className={`${
+            !isActive && '-translate-x-80 '
+          } transition-all ease-in-out delay-75 duration-500`}
         >
           My Finance
         </Typography>
@@ -243,7 +250,6 @@ export default function Sidebar({ isActive = true }: { isActive: boolean }) {
           <>
             <CardProfileOpen className="" />
             <ListOpen open={open} handleOpen={handleOpen} />
-
           </>
         ) : (
           <>
@@ -253,23 +259,21 @@ export default function Sidebar({ isActive = true }: { isActive: boolean }) {
         )}
       </div>
 
-      <div className='mb-4 px-4 self-start w-full'>
-
-        {
-          isActive ? (
-
-            <div className='flex gap-3 py-3 px-2 bg-white/20 backdrop-blur-[1px] rounded-xl'>
-              <LogOut className='text-custom_pink_2' />
-              <Typography placeholder={''}>Logout</Typography>
-            </div>
-          ) : (
-            <Button placeholder={''} className='p-3 bg-white/20 backdrop-blur-[1px]'>
-              <LogOut className='text-custom_pink_2' />
-            </Button>
-          )
-        }
+      <div className="mb-4 px-4 self-start w-full">
+        {isActive ? (
+          <div className="flex gap-3 py-3 px-2 bg-white/20 backdrop-blur-[1px] rounded-xl">
+            <LogOut className="text-custom_pink_2" />
+            <Typography placeholder={''}>Logout</Typography>
+          </div>
+        ) : (
+          <Button
+            placeholder={''}
+            className="p-3 bg-white/20 backdrop-blur-[1px]"
+          >
+            <LogOut className="text-custom_pink_2" />
+          </Button>
+        )}
       </div>
-
     </div>
   );
 }
