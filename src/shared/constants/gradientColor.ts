@@ -1,0 +1,1 @@
+export const randomGradientColors = ['bg-gradient-to-bl from-custom_yellow_2 to-custom_red','bg-gradient-to-bl from-[#4DC9E6] to-[#210CAE]','bg-gradient-to-bl from-[#1ED7B5] to-[#F0F9A7]','bg-gradient-to-bl from-[#D397FA] to-[#8364E8]','bg-gradient-to-bl from-[#95F9C3] to-[#0B3866]']

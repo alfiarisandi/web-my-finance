@@ -5,7 +5,6 @@ import {
   AccordionBody,
   AccordionHeader,
   Button,
-  Card,
   Collapse,
   List,
   ListItem,
@@ -13,7 +12,7 @@ import {
   Tooltip,
   Typography,
 } from '@material-tailwind/react';
-import { ChevronDownIcon, LogOut, UserCircle2 } from 'lucide-react';
+import { ChevronDownIcon, LogOut } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -24,10 +23,9 @@ const ButonSidebar = ({ url, icon, label }: IMenuTypes) => {
     <Link to={url} className="outline-none bg-transparent ">
       <ListItem
         placeholder={''}
-        className={`focus:bg-transparent active:bg-transparent px-3 py-2 hover:bg-gradient-to-r from-custom_blue to-custom_pink_2 rounded-lg group/item hover:text-custom_light group/item ${
-          selected &&
+        className={`focus:bg-transparent active:bg-transparent px-3 py-2 hover:bg-gradient-to-r from-custom_blue to-custom_pink_2 rounded-lg group/item hover:text-custom_light group/item ${selected &&
           'bg-gradient-to-r from-custom_blue to-custom_pink_2 text-custom_light'
-        }`}
+          }`}
       >
         <ListItemPrefix
           placeholder={''}
@@ -37,9 +35,8 @@ const ButonSidebar = ({ url, icon, label }: IMenuTypes) => {
         </ListItemPrefix>
         <Typography
           placeholder={''}
-          className={`font-normal group-hover/item:text-custom_light ${
-            selected && 'text-custom_light'
-          }`}
+          className={`font-normal group-hover/item:text-custom_light ${selected && 'text-custom_light'
+            }`}
         >
           {label}
         </Typography>
@@ -66,9 +63,8 @@ const AccordianMenu = ({
       icon={
         <ChevronDownIcon
           strokeWidth={2.5}
-          className={`mx-auto h-4 w-4 transition-all ease-in-out group-hover/item:text-custom_light ${
-            open === 1 ? 'rotate-180' : ''
-          }`}
+          className={`mx-auto h-4 w-4 transition-all ease-in-out group-hover/item:text-custom_light ${open === 1 ? 'rotate-180' : ''
+            }`}
         />
       }
     >
@@ -98,35 +94,6 @@ const AccordianMenu = ({
   );
 };
 
-const CardProfileOpen = ({ className }: { className: string }) => {
-  return (
-    <Card
-      placeholder={''}
-      className={`p-3 bg-white flex flex-row items-center gap-3 whitespace-nowrap  transition-all ease-in-out delay-75 duration-500 w-full ${className}`}
-    >
-      <UserCircle2 className="w-8 h-8 rounded-full" />
-      <div className={''}>
-        <Typography variant="h6" placeholder={''}>
-          Your Username
-        </Typography>
-        <Typography variant="small" placeholder={''}>
-          Your Username
-        </Typography>
-      </div>
-    </Card>
-  );
-};
-
-const CardProfileClose = ({ className }: { className: string }) => {
-  return (
-    <Card
-      placeholder={''}
-      className={`p-3 bg-white flex flex-row items-center  ${className}`}
-    >
-      <UserCircle2 className="w-6 h-6 rounded-full" />
-    </Card>
-  );
-};
 
 const ListOpen = ({ open, handleOpen }: { open: number; handleOpen: any }) => {
   return (
@@ -154,7 +121,7 @@ const IconButtonSide = ({
   icon,
   url,
   label,
-  onClick = () => {},
+  onClick = () => { },
 }: {
   icon: any;
   url: string;
@@ -168,10 +135,9 @@ const IconButtonSide = ({
       <Button
         placeholder={''}
         onClick={onClick}
-        className={`focus:bg-transparent active:bg-transparent bg-transparent shadow-none hover:shadow-none p-3 hover:bg-gradient-to-r from-custom_blue to-custom_pink_2 rounded-lg group/item hover:text-custom_light  ${
-          selected &&
+        className={`focus:bg-transparent active:bg-transparent bg-transparent shadow-none hover:shadow-none p-3 hover:bg-gradient-to-r from-custom_blue to-custom_pink_2 rounded-lg group/item hover:text-custom_light  ${selected &&
           'bg-gradient-to-r from-custom_blue to-custom_pink_2 text-custom_light'
-        }`}
+          }`}
       >
         {icon}
       </Button>
@@ -229,31 +195,27 @@ export default function Sidebar({ isActive = true }: { isActive: boolean }) {
   return (
     <div className={`flex flex-col h-full w-fit justify-between items-center`}>
       <div
-        className={`mb-2 p-4 flex flex-col gap-6 transition-all ease-in-out delay-75 duration-500 overflow-x-hidden ${
-          isActive
-            ? 'w-[18rem] p-4'
-            : 'w-[3em] px-0 justify-center items-center'
-        }`}
+        className={`mb-2 p-4 flex flex-col gap-6 transition-all ease-in-out delay-75 duration-500 overflow-x-hidden items-center ${isActive
+          ? 'w-[16rem] py-4 px-3'
+          : 'w-[3em] px-0 justify-center items-center'
+          }`}
       >
         <Typography
           placeholder={''}
           variant="h4"
           color="white"
-          className={`${
-            !isActive && '-translate-x-80 '
-          } transition-all ease-in-out delay-75 duration-500`}
+          className={`${!isActive && '-translate-x-80 '
+            } transition-all ease-in-out delay-75 duration-500 self-start`}
         >
           My Finance
         </Typography>
 
         {isActive ? (
           <>
-            <CardProfileOpen className="" />
             <ListOpen open={open} handleOpen={handleOpen} />
           </>
         ) : (
           <>
-            <CardProfileClose className={``} />
             <ListClose open={open} handleOpen={handleOpen} />
           </>
         )}

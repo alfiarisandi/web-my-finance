@@ -9,19 +9,17 @@ export default function Index() {
     <div className="flex flex-1 flex-col gap-3 w-full">
       <Header />
       <div className="flex gap-3 overflow-auto">
-        <div className="flex flex-col gap-3 w-[60%]">
-          <div className="h-[60%]">
+        <div className="flex flex-col gap-3">
+          <div className="h-[50%]">
             <Savings />
           </div>
-          <div className="flex gap-3 overflow-y-auto h-[40%]">
+          <div className="flex gap-3 overflow-y-auto h-[50%]">
             <LatestTransaction />
           </div>
         </div>
-        <div className="flex flex-col gap-3 w-[40%]">
-          <div className="flex gap-3 h-[40%] overflow-y-auto">
-            <BugetPlan />
-          </div>
-          <div className="flex gap-3 overflow-y-auto">
+        <div className="">
+          <BugetPlan />
+          <div className="overflow-y-auto">
             <OutcomeStatistic />
           </div>
         </div>

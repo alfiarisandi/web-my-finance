@@ -25,6 +25,8 @@ module.exports = withMT({
         custom_gray: '#607274',
         custom_black: '#191919',
         custom_yellow: '#EEF296',
+        custom_yellow_2 : '#F9C823',
+        custom_red : '#FC506E',
         button_gradient: 'bg-gradient-to-r from-custom_blue to-custom_pink_2',
       },
     },

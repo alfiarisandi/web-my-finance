@@ -23,7 +23,7 @@ export default function Layout() {
           </Button>
         </div>
       </div>
-      <div className=" bg-white/20 rounded-r-xl backdrop-blur-[2px] border-r border-y border-white/50 w-full flex px-8 py-3 relative">
+      <div className=" bg-white/20 rounded-r-xl backdrop-blur-[2px] border-r border-y border-white/50 w-full flex pl-5 pr-3 py-3 relative">
         <Outlet />
       </div>
     </div>

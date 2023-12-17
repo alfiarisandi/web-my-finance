@@ -1,9 +1,12 @@
+import { randomGradientColors } from '@constants/gradientColor';
 import { Typography } from '@material-tailwind/react';
 
 export default function CardsCarousel() {
+  const color: number = Number((Math.random() * 4).toFixed())
+  console.log(color)
   return (
-    <div className="h-full w-full max-w-[500px] px-12 py-6 mx-auto">
-      <div className="bg-custom_blue rounded-md p-4 flex flex-col justify-between h-full">
+    <div className="h-full w-full max-w-[500px] max-h-[250px] px-12 py-6 mx-auto">
+      <div className={`${randomGradientColors[color]} rounded-md p-4 flex flex-col justify-between h-full `}>
         <div className="flex flex-col">
           <Typography
             placeholder={''}
