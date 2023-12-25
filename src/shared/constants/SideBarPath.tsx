@@ -22,12 +22,12 @@ const menuItems: IMenuTypes[] = [
     child: [
       {
         url: 'data/income',
-        label: 'Income / Pendapatan',
+        label: 'Income',
         icon: <ArrowDownCircle className={className} />,
       },
       {
         url: 'data/outcome',
-        label: 'Outcome / Pengeluaran',
+        label: 'Outcome',
         icon: <ArrowUpCircle className={className} />,
       },
       {

@@ -1,4 +1,5 @@
 import Layout from '@component/Layout';
+import Index from '@features/auth/Index';
 import Login from '@pages/auth/login/Login';
 import Dashboard from '@pages/dashboard/Dashboard';
 import { Outlet, createBrowserRouter } from 'react-router-dom';
@@ -14,7 +15,7 @@ export default createBrowserRouter([
   },
   {
     path: 'auth',
-    element: <Root />,
+    element: <Index />,
     children: [
       {
         path: 'login',

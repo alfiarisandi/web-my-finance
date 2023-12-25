@@ -1,5 +1,5 @@
 import { Typography } from '@material-tailwind/react';
-import { WalletIcon } from 'lucide-react';
+import { UserCircle2 } from 'lucide-react';
 
 export default function Header() {
   return (
@@ -7,37 +7,37 @@ export default function Header() {
       <div>
         <Typography
           placeholder={''}
-          variant="h4"
+          variant="h5"
           className="text-custom_blue_2 font-bold"
         >
           Hello Alfi Arisandi
         </Typography>
         <Typography
           placeholder={''}
-          variant="lead"
+          variant="paragraph"
           className="text-custom_gray"
         >
           Good Afternoon
         </Typography>
       </div>
-      <div className="p-3 bg-white/30 rounded-xl flex gap-3 items-center">
-        <div className="flex justify-center items-center h-fit p-2 bg-gradient-to-tl from-custom_blue to-custom_pink_2 rounded-md">
-          <WalletIcon className="h-4 w-4 text-white" />
+      <div className="flex gap-3 items-center hover:bg-white/30 hover:cursor-pointer px-3 rounded-lg">
+        <div className="flex justify-center items-center h-fit p-1 bg-gradient-to-tl from-custom_blue to-custom_pink_2 rounded-full">
+          <UserCircle2 className="h-6 w-6 text-white" />
         </div>
         <div className="max-w-[300px]">
           <Typography
             placeholder={''}
-            variant="h6"
-            className="text-custom_gray"
+            variant="paragraph"
+            className="text-custom_blue_2 font-semibold"
           >
-            Total Balance
+            alfiarisandi
           </Typography>
           <Typography
             placeholder={''}
-            variant="h6"
-            className="text-custom_blue_2"
+            variant="small"
+            className="text-custom_gray"
           >
-            Rp. 999,999,999.00
+            sub title
           </Typography>
         </div>
       </div>

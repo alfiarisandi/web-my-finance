@@ -9,7 +9,9 @@ export const apiBaseUrl = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: configEnv.apiBaseUrl,
     headers: {
-      Authorization: `Bearer ${JSON.parse(Cookies.get('token') || '{}')}`,
+      Authorization: `Bearer ${
+        JSON.parse(Cookies.get('_users') || '{}').token || ''
+      }`,
     },
   }),
   endpoints: () => ({}),
